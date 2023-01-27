@@ -442,6 +442,10 @@ void RobotAction() {
       doTurnLedOn(LED_3); 
       break;
   }
+
+  //Prints the volatge of BUTTON_3
+  Serial.print(getPinVoltage(BUTTON_3));
+  Serial.print("\n");
   
   // This drives the main motors on the robot
   switch(ActionRobotDrive) {
