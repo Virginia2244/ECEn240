@@ -275,11 +275,7 @@ bool isCollision() {
   //In lab 6 you will add a sonar sensor to detect collision and
   // the code for the sonar sensor will go in this function.
   // Until then we will use a button to model the sensor.
-  if (/*Add code to detect if the collision button was pressed*/) {
-    return true;
-  } else {
-    return false;
-  }
+  return isButtonPushed(BUTTON_3);
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -330,7 +326,7 @@ void fsmCollisionDetection() {
       fsmSteerRobot(); // Milestone 2
       
       //State transition logic
-      if ( /*Add code to determine when you need to go back to state 0*/ ) {
+      if ( SensedCollision == DETECTION_YES ) {
         collisionDetectionState = 0; //if collision, go to collision state
       }
       break;
