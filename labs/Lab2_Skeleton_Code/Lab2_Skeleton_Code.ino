@@ -495,6 +495,9 @@ void MoveServo() {
   }
 }
 
+bool isButtonPushed(int button_pin) {
+  return (getPinVoltage(button_pin) >= BUTTON_THRESHOLD);
+}
 
 
 /**********************************************************************************************************
