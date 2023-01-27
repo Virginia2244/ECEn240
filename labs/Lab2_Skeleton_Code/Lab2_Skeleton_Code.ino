@@ -503,11 +503,11 @@ void MoveServo() {
 // Function to turn LED on
 void doTurnLedOn(int led_pin)
 {
-  /* Use knowledge from lab 1 to set the led_pin on */
+  digitalWrite(led_pin, HIGH);
 }
 
 // Function to turn LED off
 void doTurnLedOff(int led_pin)
 {
-  /* Use knowledge from lab 1 to set the led_pin high */
+  digitalWrite(led_pin, LOW);
 }
