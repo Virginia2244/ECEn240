@@ -258,11 +258,7 @@ bool isButtonPushed(int button_pin) {
   //Remember that when the voltage is 0, it's only close to zero.
   //Hint: Call the getPinVoltage function and if that value is greater
   // than the BUTTON_THRESHOLD variable toward the top of the file, return true.
-  if (/*Add code to determine if the voltage on the pin is high or low*/){
-    return true;
-  } else {
-    return false;
-  }
+  return getPinVoltage(button_pin) >= BUTTON_THRESHOLD;
 }
 
 
@@ -440,11 +436,10 @@ void RobotAction() {
   // This turns the collision LED on and off
   switch(ActionCollision) {
     case COLLISION_OFF:
-      doTurnLedOff(LED_3); //Collision LED off - DON'T FORGET TO ADD CODE TO doTurnLedOff() 
-                           // AND doTurnLedOn() OR ELSE YOUR LEDS WON'T WORK!!!
+      doTurnLedOff(LED_3); //OR ELSE YOUR LEDS WON'T WORK!!!
       break;
     case COLLISION_ON:
-      /* Add code to turn the collision LED on. This would be LED_3 */  
+      doTurnLedOn(LED_3); 
       break;
   }
   
@@ -491,9 +486,7 @@ void MoveServo() {
   }
 }
 
-bool isButtonPushed(int button_pin) {
-  return (getPinVoltage(button_pin) >= BUTTON_THRESHOLD);
-}
+
 
 
 /**********************************************************************************************************
