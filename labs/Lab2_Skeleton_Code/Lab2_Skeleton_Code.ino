@@ -19,7 +19,7 @@
  ********************************************************************/
 
 /* These initial includes allow you to use necessary libraries for
-your sensors and servos. */
+  your sensors and servos. */
 #include "Arduino.h"
 
 //
@@ -143,14 +143,14 @@ int ActionServoMove =  SERVO_MOVE_STOP;
 void setup() {
   //Set up serial connection at 9600 Baud
   Serial.begin(9600);
-  
+
   //Set up output pins
   pinMode(LED_1, OUTPUT);
   pinMode(LED_2, OUTPUT);
   pinMode(LED_3, OUTPUT);
   pinMode(LED_4, OUTPUT);
   pinMode(LED_5, OUTPUT);
-  
+
   //Set up input pins
   pinMode(BUTTON_1, INPUT);
   pinMode(BUTTON_2, INPUT);
@@ -171,25 +171,25 @@ void loop() {
   // serial debugging to know what the robot is perceiving and what
   // actions the robot wants to take.
   int DebugStateOutput = false; // Change false to true to debug
-  
+
   RobotPerception(); // PERCEPTION
   if (DebugStateOutput) {
     Serial.print("Perception:");
-    Serial.print(SensedLightUp);
-    Serial.print(SensedLightLeft);
+    //    Serial.print(SensedLightUp);
+    //    Serial.print(SensedLightLeft);
     Serial.print(SensedCollision);
-    Serial.print(SensedLightRight); 
+    Serial.print(SensedLightRight);
     Serial.print(SensedLightDown);
-//    Serial.print(SensedCapacitiveTouch); - Lab 4
+    //    Serial.print(SensedCapacitiveTouch); - Lab 4
   }
-  
+
   RobotPlanning(); // PLANNING
   if (DebugStateOutput) {
     Serial.print(" Action:");
     Serial.print(ActionCollision);
-    Serial.print(ActionRobotDrive); 
-//    Serial.print(ActionRobotSpeed); - Lab 4
-    Serial.println(ActionServoMove);
+    Serial.println(ActionRobotDrive);
+    //    Serial.print(ActionRobotSpeed); - Lab 4
+    //    Serial.println(ActionServoMove);
   }
   RobotAction(); // ACTION
 }
@@ -202,38 +202,48 @@ void RobotPerception() {
   // that can be used by the robot in subsequent stages
 
 
-  
+
   // Photodiode Sensing
   //Serial.println(getPinVoltage(BUTTON_2)); //uncomment for debugging
-  
-  /* Delete this whole line for milestone 2
-  if (isButtonPushed(BUTTON_2)){
+
+
+  if (isButtonPushed(BUTTON_2)) {
     SensedLightLeft = DETECTION_YES;
   } else {
     SensedLightLeft = DETECTION_NO;
   }
   // Remember, you can find the buttons and which one goes to what towards the top of the file
-  if (*Add code to sense if light is detected on the right*) { 
-    *Action when light IS detected on the right*
+  if (isButtonPushed(BUTTON_4)) {
+    SensedLightRight = DETECTION_YES;
   } else {
-    *Action when light is NOT detected on the right*
+    SensedLightRight = DETECTION_NO;
   }
-  Delete this whole line for milestone 2 */
 
-      
-  /* Add code to detect if light is up or down. Lab 2 milestone 3*/
 
-  
 
-   // Capacitive Sensor
-   /*Add code in lab 4*/
+  /* Code to detect if light is up or down. Lab 2 milestone 3*/
+  if (isButtonPushed(BUTTON_1)) {
+    SensedLightUp = DETECTION_YES;
+  } else {
+    SensedLightUp = DETECTION_NO;
+  }
 
-   // Collision Sensor
-   if (isCollision()) {   // Add code in isCollision() function for lab 2 milestone 1
+  if (isButtonPushed(BUTTON_5)) {
+    SensedLightDown = DETECTION_YES;
+  } else {
+    SensedLightDown = DETECTION_NO;
+  }
+
+
+  // Capacitive Sensor
+  /*Add code in lab 4*/
+
+  // Collision Sensor
+  if (isCollision()) {   // Add code in isCollision() function for lab 2 milestone 1
     SensedCollision = DETECTION_YES;
-   } else {
+  } else {
     SensedCollision = DETECTION_NO;
-   }
+  }
 }
 
 
@@ -266,7 +276,7 @@ bool isButtonPushed(int button_pin) {
 // Function that detects if there is an obstacle in front of robot
 ////////////////////////////////////////////////////////////////////
 bool isCollision() {
-  //This is where you add code that tests if the collision button 
+  //This is where you add code that tests if the collision button
   // was pushed (BUTTON_3)
   //In lab 6 you will add a sonar sensor to detect collision and
   // the code for the sonar sensor will go in this function.
@@ -301,26 +311,26 @@ void RobotPlanning(void) {
 void fsmCollisionDetection() {
   static int collisionDetectionState = 0;
   //Serial.println(collisionDetectionState); //uncomment for debugging
-  
+
   switch (collisionDetectionState) {
     case 0: //collision detected
       //There is an obstacle, stop the robot
       ActionCollision = COLLISION_ON; // Sets the action to turn on the collision LED
-      /* Add code in milestone 2 to stop the robot's wheels - Hint: ActionRobotDrive = ________ */
-      
-      
+      ActionRobotDrive = DRIVE_STOP;
+
+
       //State transition logic
       if ( SensedCollision == DETECTION_NO) {
         collisionDetectionState = 1; //if no collision, go to no collision state
       }
       break;
-    
+
     case 1: //no collision
       //There is no obstacle, drive the robot
       ActionCollision = COLLISION_OFF; // Sets action to turn off the collision LED
 
       fsmSteerRobot(); // Milestone 2
-      
+
       //State transition logic
       if ( SensedCollision == DETECTION_YES ) {
         collisionDetectionState = 0; //if collision, go to collision state
@@ -331,7 +341,25 @@ void fsmCollisionDetection() {
       {
         collisionDetectionState = 0;
       }
-      break;
+  }
+}
+
+////////////////////////////////////////////////////////////////////
+// Code for determining the state of steerRobotState
+////////////////////////////////////////////////////////////////////
+
+int getSteerRobotState() {
+  if ((SensedLightLeft == 0) && (SensedLightRight == 0)) {
+    return 0; //Stop
+  }
+  else if ((SensedLightLeft == 1) && (SensedLightRight == 0)) {
+    return 1; //turn left
+  }
+  else if ((SensedLightLeft == 0) && (SensedLightRight == 1)) {
+    return 2; //turn right
+  }
+  else {
+    return 3; //go straight
   }
 }
 
@@ -339,59 +367,56 @@ void fsmCollisionDetection() {
 // State machine for detecting if light is to the right or left,
 // and steering the robot accordingly.
 ////////////////////////////////////////////////////////////////////
+
 void fsmSteerRobot() {
   static int steerRobotState = 0;
-  //Serial.println(steerRobotState); //uncomment for debugging
+  //  Serial.println(steerRobotState); //uncomment for debugging
 
-  /* Get rid of this whole line for milestone 2
   switch (steerRobotState) {
     case 0: //light is not detected
       //The light is straight ahead, drive straight
       ActionRobotDrive = DRIVE_STOP;
-      
-      //State transition logic
-      if ( SensedLightLeft == DETECTION_YES ) {
-        steerRobotState = 1; //if light on left of robot, go to left state
-      } else if ( SensedLightRight == DETECTION_YES ) {
-        steerRobotState = 2; //if light on right of robot, go to right state
-      }
+      steerRobotState = getSteerRobotState();
       break;
-    
+
     case 1: //light is to the left of robot
       //The light is on the left, turn left
-      ActionRobotDrive =  //Add appropriate variable to set the action to turn left
-      
-      //State transition logic
-      if ( *Add code: If light is also to the right, the light is in front* ) {
-        *Add code to transition to the "light on left and right" state* //if light is on right, then go straight
-      } else if ( *Add code: no longer light to the left ) {
-        *Add transition code* //if light is not on left, go back to stop state
-      }
-      
+      ActionRobotDrive =  DRIVE_LEFT;
+      steerRobotState = getSteerRobotState();
       break;
-    
+
     case 2: //light is to the right of robot
       //The light is on the right, turn right
-      *Add code to set the action*
-      
-      //State transition logic
-      *Add code to transition to the "light on right and left" state 
-
+      ActionRobotDrive =  DRIVE_RIGHT;
+      steerRobotState = getSteerRobotState();
       break;
-      
-    // light is on both right and left
-      *Add Code: Add in a case 3 for when the light is on both the right and left 
-      *Think about what actions you need to implement and 
-      *what changes could occur that would cause a transition to another 
-      *state. Don't forget the break statement at the end of the case.
-      
-      
+
+    case 3:
+      ActionRobotDrive = DRIVE_STRAIGHT;
+      steerRobotState = getSteerRobotState();
+      //control the LEDs
+      break;
+
     default: // error handling
-    {
-      steerRobotState = 0;
-    }
+      {
+        steerRobotState = 0;
+      }
   }
-  Get rid of this whole line for milestone 2*/
+}
+
+
+////////////////////////////////////////////////////////////////////
+// Helper funciton for fsmMoveServoUpAndDown
+// Checks the state of the sensors and changes moveServoState accordingly
+////////////////////////////////////////////////////////////////////
+int getServoState() {
+  if (((SensedLightDown == 1) && (SensedLightUp == 0))) {
+    return SERVO_MOVE_DOWN;
+  } else if (((SensedLightDown == 0) && (SensedLightUp == 1))) {
+    return SERVO_MOVE_UP;
+  } else {
+    return SERVO_MOVE_STOP;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -401,14 +426,37 @@ void fsmSteerRobot() {
 void fsmMoveServoUpAndDown() {
   static int moveServoState = 0;
   //Serial.println(moveServoState); //uncomment for debugging
-  
+
   // Milestone 3
   //Create a state machine modeled after the ones in milestones 1 and 2
   // to plan the servo action based off of the perception of the robot
   //Remember no light or light in front = servo doesn't move
   //Light above = servo moves up
   //Light below = servo moves down
-  
+
+  switch (moveServoState) {
+    case SERVO_MOVE_STOP: //Light is detected evenly across the sensors
+      moveServoState = getServoState();
+      ActionServoMove = SERVO_MOVE_STOP;
+      break;
+
+    case SERVO_MOVE_UP: //Light is detected by the upper sensor
+      moveServoState = getServoState();
+      ActionServoMove = SERVO_MOVE_UP;
+      break;
+
+    case SERVO_MOVE_DOWN: //Light is detected by the lower sensor
+      moveServoState = getServoState();
+      ActionServoMove = SERVO_MOVE_DOWN;
+      break;
+
+    default:  //bug handling
+      {
+        moveServoState = SERVO_MOVE_STOP;
+      }
+
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -434,39 +482,44 @@ void RobotAction() {
   // Here the results of planning are implented so the robot does something
 
   // This turns the collision LED on and off
-  switch(ActionCollision) {
+  switch (ActionCollision) {
     case COLLISION_OFF:
       doTurnLedOff(LED_3); //OR ELSE YOUR LEDS WON'T WORK!!!
       break;
     case COLLISION_ON:
-      doTurnLedOn(LED_3); 
+      doTurnLedOn(LED_3);
       break;
   }
 
   //Prints the volatge of BUTTON_3
-  Serial.print(getPinVoltage(BUTTON_3));
-  Serial.print("\n");
-  
+  //  Serial.print(getPinVoltage(BUTTON_3));
+  //  Serial.print("\n");
+
   // This drives the main motors on the robot
-  switch(ActionRobotDrive) {
+  switch (ActionRobotDrive) {
     case DRIVE_STOP:
-      /* Add code in milestone 2 to turn off both left and right motors (LEDs right now). 
-        Use the doTurnLedOff() function */
-      /* DON'T FORGET TO USE YOUR LED VARIABLES AND NOT YOUR BUTTON VARIABLES FOR THIS!!! */
+      //control the LEDs
+      doTurnLedOff(LED_2);
+      doTurnLedOff(LED_4);
       break;
     case DRIVE_LEFT:
-      /* Add code in milestone 2 to turn off the right and on the left LEDs */
+      //control the LEDs
+      doTurnLedOn(LED_2);
+      doTurnLedOff(LED_4);
       break;
     case DRIVE_RIGHT:
-      /* Add code in milestone 2 */
+      //control the LEDs
+      doTurnLedOff(LED_2);
+      doTurnLedOn(LED_4);
       break;
     case DRIVE_STRAIGHT:
-      /* Add code in milestone 2 */
+      doTurnLedOn(LED_2);
+      doTurnLedOn(LED_4);
       break;
   }
-  
+
   // This calls a function to move the servo
-    MoveServo();       
+  MoveServo();
 }
 
 
@@ -477,15 +530,18 @@ void MoveServo() {
   // Note that there needs to be some logic in the action of moving
   // the servo so that it does not exceed its range
   /* Add CurrentServoAngle in lab 6 */
-  switch(ActionServoMove) {
+  switch (ActionServoMove) {
     case SERVO_MOVE_STOP:
-      /* Add code in milestone 3 */
+      doTurnLedOff(LED_5);
+      doTurnLedOff(LED_1);
       break;
     case SERVO_MOVE_UP:
-      /* Add code in milestone 3 */
+      doTurnLedOff(LED_5);
+      doTurnLedOn(LED_1);
       break;
     case SERVO_MOVE_DOWN:
-      /* Add code in milestone 3 */
+      doTurnLedOn(LED_5);
+      doTurnLedOff(LED_1);
       break;
   }
 }
@@ -493,17 +549,15 @@ void MoveServo() {
 
 
 
-/**********************************************************************************************************
+/********************************************************************
   AUXILIARY functions that may be useful in performing diagnostics
  ********************************************************************/
 // Function to turn LED on
-void doTurnLedOn(int led_pin)
-{
+void doTurnLedOn(int led_pin) {
   digitalWrite(led_pin, HIGH);
 }
 
 // Function to turn LED off
-void doTurnLedOff(int led_pin)
-{
+void doTurnLedOff(int led_pin) {
   digitalWrite(led_pin, LOW);
 }
