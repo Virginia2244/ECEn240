@@ -21,6 +21,7 @@
 /* These initial includes allow you to use necessary libraries for
 your sensors and servos. */
 #include "Arduino.h"
+#include "variables.h"
 
 //
 // Compiler defines: the compiler replaces each name with its assignment
@@ -108,34 +109,6 @@ your sensors and servos. */
 #define SERVO_MOVE_DOWN 2
 
 
-/***********************************************************/
-// Global variables that define PERCEPTION and initialization
-
-// Collision (using Definitions)
-int SensedCollision = DETECTION_NO;
-
-// Photodiode inputs (using Definitions) - The button represent the photodiodes for lab 2
-int SensedLightRight = DETECTION_NO;
-int SensedLightLeft = DETECTION_NO;
-int SensedLightUp = DETECTION_NO;
-int SensedLightDown = DETECTION_NO;
-
-// Capacitive sensor input (using Definitions) - Lab 4
-//int SensedCapacitiveTouch = DETECTION_NO;
-
-
-/***********************************************************/
-// Global variables that define ACTION and initialization
-
-// Collision Actions (using Definitions)
-int ActionCollision = COLLISION_OFF;
-
-// Main motors Action (using Definitions)
-int ActionRobotDrive = DRIVE_STOP;
-// Add speed action in Lab 4
-
-// Servo Action (using Definitions)
-int ActionServoMove =  SERVO_MOVE_STOP;
 
 /********************************************************************
   SETUP function - this gets executed at power up, or after a reset
@@ -170,7 +143,7 @@ void loop() {
   // This DebugStateOutput flag can be used to easily turn on the
   // serial debugging to know what the robot is perceiving and what
   // actions the robot wants to take.
-  int DebugStateOutput = false; // Change false to true to debug
+  int DebugStateOutput = true; // Change false to true to debug
   
   RobotPerception(); // PERCEPTION
   if (DebugStateOutput) {
