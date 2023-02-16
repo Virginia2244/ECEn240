@@ -1,3 +1,4 @@
+#include "variables.h"
 /***********************************************************/
 // Global variables that define PERCEPTION and initialization
 
