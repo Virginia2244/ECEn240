@@ -50,6 +50,9 @@ void RobotPerception() {
   } else {
     SensedCollision = DETECTION_NO;
   }
+
+  //Battery Sensor
+  BatV = getPinVoltage(BATTERY_V);
 }
 
 

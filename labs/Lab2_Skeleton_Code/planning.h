@@ -13,4 +13,6 @@ void fsmMoveServoUpAndDown();
 void fsmCapacitiveSensorSpeedControl();
 
 void fsmChangeSpeed();
+
+void fsmVoltageDetection();
 #endif

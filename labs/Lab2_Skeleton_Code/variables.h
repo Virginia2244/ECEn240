@@ -20,14 +20,20 @@
 #define BUTTON_5 A6 // Far right button - Servo Down
 
 // LED pins
-#define LED_1 6 // Far Left LED - Servo Up
-#define LED_2 5 // Left Middle LED  - Left Motor
+#define LED_1 2 // Far Left LED - Servo Up
+#define LED_2 3 // Left Middle LED  - Left Motor
 #define LED_3 4 // Middle LED - Collision
-#define LED_4 3 // Right Middle LED - Right Motor
-#define LED_5 2 // Far Right LED - Servo Down
+#define LED_4 5 // Right Middle LED - Right Motor
+#define LED_5 6 // Far Right LED - Servo Down
 
 // Motor enable pins - Lab 3
 // These will replace LEDs 2 and 4
+#define H_BRIDGE_ENA 8 //Right Motor
+#define H_BRIDGE_ENB 9 //Left Motor
+
+
+// pin used for sensing the voltage of the battery
+#define BATTERY_V A0
 
 // Photodiode pins - Lab 5
 // These will replace buttons 1, 2, 4, 5
@@ -109,4 +115,8 @@ extern int ActionRobotDrive;
 
 // Servo Action (using Definitions)
 extern int ActionServoMove;
+
+// Sensing the voltage of the battery
+extern float BatV;
+extern int BatteryState;
 #endif

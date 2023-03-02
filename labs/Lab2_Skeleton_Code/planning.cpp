@@ -8,6 +8,7 @@ void RobotPlanning(void) {
   // based on the sensing from the Perception stage.
   fsmCollisionDetection(); // Milestone 1
   fsmMoveServoUpAndDown(); // Milestone 3
+  fsmVoltageDetection(); // Lab 3 Milestone 2
   // Add Speed Control State Machine in lab 4
 }
 
@@ -164,6 +165,26 @@ void fsmMoveServoUpAndDown() {
 
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////
+// State machine for detecting when the battery's voltage
+// is running low and turning on the right LEDs
+////////////////////////////////////////////////////////////////////
+void fsmVoltageDetection(){
+  if (BatV <= (7.2/3)){
+    BatteryState = 0;
+  }
+  else if (BatV <= (9/3)){
+    BatteryState = 1;
+  }
+  else if (BatV <= (11.2/3)){
+    BatteryState = 2;
+  }
+  else {
+    BatteryState = 3;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////

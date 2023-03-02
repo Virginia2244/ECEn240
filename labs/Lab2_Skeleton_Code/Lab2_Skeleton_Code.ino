@@ -41,6 +41,13 @@ void setup() {
   pinMode(LED_3, OUTPUT);
   pinMode(LED_4, OUTPUT);
   pinMode(LED_5, OUTPUT);
+
+  //Set up output pins for motors
+  pinMode(H_BRIDGE_ENA, OUTPUT);
+  pinMode(H_BRIDGE_ENB, OUTPUT);
+
+  //Set up input pin for sensing battery voltage
+  pinMode(BATTERY_V, INPUT);
   
   //Set up input pins
   pinMode(BUTTON_1, INPUT);
@@ -61,7 +68,7 @@ void loop() {
   // This DebugStateOutput flag can be used to easily turn on the
   // serial debugging to know what the robot is perceiving and what
   // actions the robot wants to take.
-  int DebugStateOutput = true; // Change false to true to debug
+  int DebugStateOutput = false; // Change false to true to debug
   
   RobotPerception(); // PERCEPTION
   if (DebugStateOutput) {
@@ -83,4 +90,8 @@ void loop() {
     Serial.println(ActionServoMove);
   }
   RobotAction(); // ACTION
+  Serial.print("Voltage: ");
+  Serial.print(BatV);
+  Serial.print("\tBattery State: ");
+  Serial.println(BatteryState);
 }

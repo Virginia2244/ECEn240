@@ -9,10 +9,10 @@ void RobotAction() {
   // This turns the collision LED on and off
   switch (ActionCollision) {
     case COLLISION_OFF:
-      doTurnLedOff(LED_3); //OR ELSE YOUR LEDS WON'T WORK!!!
+//      doTurnLedOff(LED_3); //OR ELSE YOUR LEDS WON'T WORK!!!
       break;
     case COLLISION_ON:
-      doTurnLedOn(LED_3);
+//      doTurnLedOn(LED_3);
       break;
   }
 
@@ -24,24 +24,49 @@ void RobotAction() {
   switch (ActionRobotDrive) {
     case DRIVE_STOP:
       //control the LEDs
-      doTurnLedOff(LED_2);
-      doTurnLedOff(LED_4);
+//      doTurnLedOff(H_BRIDGE_ENA);
+//      doTurnLedOff(H_BRIDGE_ENB);
       break;
     case DRIVE_LEFT:
       //control the LEDs
-      doTurnLedOn(LED_2);
-      doTurnLedOff(LED_4);
+//      doTurnLedOn(H_BRIDGE_ENA);
+//      doTurnLedOff(H_BRIDGE_ENB);
       break;
     case DRIVE_RIGHT:
       //control the LEDs
-      doTurnLedOff(LED_2);
-      doTurnLedOn(LED_4);
+//      doTurnLedOff(H_BRIDGE_ENA);
+//      doTurnLedOn(H_BRIDGE_ENB);
       break;
     case DRIVE_STRAIGHT:
-      doTurnLedOn(LED_2);
-      doTurnLedOn(LED_4);
+//      doTurnLedOn(H_BRIDGE_ENA);
+//      doTurnLedOn(H_BRIDGE_ENB);
       break;
   }
+
+  switch (BatteryState){
+    case 0:
+        doTurnLedOff(LED_5);
+        doTurnLedOff(LED_4);
+        doTurnLedOff(LED_3);
+    break;
+    case 1:
+        doTurnLedOn(LED_5);
+        doTurnLedOff(LED_4);
+        doTurnLedOff(LED_3);
+    break;
+    case 2:
+        doTurnLedOn(LED_5);
+        doTurnLedOn(LED_4);
+        doTurnLedOff(LED_3);
+    break;
+    case 3:
+        doTurnLedOn(LED_5);
+        doTurnLedOn(LED_4);
+        doTurnLedOn(LED_3);
+    break;
+  }
+
+  
 
   // This calls a function to move the servo
   MoveServo();
@@ -57,16 +82,16 @@ void MoveServo() {
   /* Add CurrentServoAngle in lab 6 */
   switch (ActionServoMove) {
     case SERVO_MOVE_STOP:
-      doTurnLedOff(LED_5);
-      doTurnLedOff(LED_1);
+//      doTurnLedOff(LED_5);
+//      doTurnLedOff(LED_1);
       break;
     case SERVO_MOVE_UP:
-      doTurnLedOff(LED_5);
-      doTurnLedOn(LED_1);
+//      doTurnLedOff(LED_5);
+//      doTurnLedOn(LED_1);
       break;
     case SERVO_MOVE_DOWN:
-      doTurnLedOn(LED_5);
-      doTurnLedOff(LED_1);
+//      doTurnLedOn(LED_5);
+//      doTurnLedOff(LED_1);
       break;
   }
 }

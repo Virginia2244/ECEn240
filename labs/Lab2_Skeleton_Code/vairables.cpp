@@ -27,3 +27,8 @@ int ActionRobotDrive = 0;
 
 // Servo Action (using Definitions)
 int ActionServoMove =  0;
+
+
+// Battery Voltage
+float BatV = 0;
+int BatteryState = 0;
