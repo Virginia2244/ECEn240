@@ -1,5 +1,4 @@
 #include "variables.h"
-#include "perception.h"
 
 #ifndef ACTION
 #define ACTION
