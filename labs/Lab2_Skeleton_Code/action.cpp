@@ -9,6 +9,9 @@ void RobotAction() {
   // This turns the collision LED on and off
   switch (ActionCollision) {
     case COLLISION_OFF:
+        //turns the motors off when collision stop is a thing
+        doTurnLedOff(H_BRIDGE_ENA);
+        doTurnLedOff(H_BRIDGE_ENB);
 //      doTurnLedOff(LED_3); //OR ELSE YOUR LEDS WON'T WORK!!!
       break;
     case COLLISION_ON:
@@ -23,23 +26,23 @@ void RobotAction() {
   // This drives the main motors on the robot
   switch (ActionRobotDrive) {
     case DRIVE_STOP:
-      //control the LEDs
-//      doTurnLedOff(H_BRIDGE_ENA);
-//      doTurnLedOff(H_BRIDGE_ENB);
+      //control the motors
+      doTurnLedOff(H_BRIDGE_ENA);
+      doTurnLedOff(H_BRIDGE_ENB);
       break;
     case DRIVE_LEFT:
-      //control the LEDs
-//      doTurnLedOn(H_BRIDGE_ENA);
-//      doTurnLedOff(H_BRIDGE_ENB);
+      //control the motors
+      doTurnLedOn(H_BRIDGE_ENA);
+      doTurnLedOff(H_BRIDGE_ENB);
       break;
     case DRIVE_RIGHT:
-      //control the LEDs
-//      doTurnLedOff(H_BRIDGE_ENA);
-//      doTurnLedOn(H_BRIDGE_ENB);
+      //control the motors
+      doTurnLedOff(H_BRIDGE_ENA);
+      doTurnLedOn(H_BRIDGE_ENB);
       break;
     case DRIVE_STRAIGHT:
-//      doTurnLedOn(H_BRIDGE_ENA);
-//      doTurnLedOn(H_BRIDGE_ENB);
+      doTurnLedOn(H_BRIDGE_ENA);
+      doTurnLedOn(H_BRIDGE_ENB);
       break;
   }
 

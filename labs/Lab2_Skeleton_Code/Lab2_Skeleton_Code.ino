@@ -91,7 +91,9 @@ void loop() {
   }
   RobotAction(); // ACTION
   Serial.print("Voltage: ");
-  Serial.print(BatV);
+  Serial.print(SensedLightLeft);
+  Serial.print("  ");
+  Serial.print(SensedLightRight);
   Serial.print("\tBattery State: ");
-  Serial.println(BatteryState);
+  Serial.println(ActionRobotDrive);
 }
