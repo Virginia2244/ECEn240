@@ -28,8 +28,8 @@
 
 // Motor enable pins - Lab 3
 // These will replace LEDs 2 and 4
-#define H_BRIDGE_ENA 8 //Right Motor
-#define H_BRIDGE_ENB 9 //Left Motor
+#define H_BRIDGE_ENA 7 //Right Motor
+#define H_BRIDGE_ENB 8 //Left Motor
 
 
 // pin used for sensing the voltage of the battery
