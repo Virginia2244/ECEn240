@@ -1,0 +1,344 @@
+[33mcommit b35cf5fabb9b791d097eb7d948049991fad94c3a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Fri Feb 10 11:48:06 2023 -0700
+
+    Finished code for lab 02
+
+[33mcommit f2742ff68ae702cade0a2c786f5bd6e2ae0991ff[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Thu Jan 26 19:39:25 2023 -0700
+
+    RobotAction now also prints the voltage of BUTTON_3
+
+[33mcommit d55214a8927f9edff7efe731bbdee29c85717ccb[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Thu Jan 26 17:32:00 2023 -0700
+
+    filled out actionCollision case statements
+
+[33mcommit 311ed2cfbe0678600f147957b509906ef10b53eb[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Thu Jan 26 17:14:27 2023 -0700
+
+    filled in isCollision so sense the button
+
+[33mcommit 341da582047a3bc09f090e5987cccc4d3cd6465d[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Thu Jan 26 17:03:28 2023 -0700
+
+    added isButtonPushed
+
+[33mcommit e8ae45d38eb1362348a4368fa7f083e1fb2b454a[m
+Author: Carter Pollan <carter.pollan@gmail.com>
+Date:   Thu Jan 26 17:00:10 2023 -0700
+
+    edited the funcitons to turn LEDs on and off.
+
+[33mcommit 07a3178b5bd11a033434c2803471e65726219c2a[m
+Author: mazzeob <bmazzeo@byu.edu>
+Date:   Thu Jan 19 12:06:12 2023 -0700
+
+    Update Lab2_Skeleton_Code.ino
+
+[33mcommit 5d20a175b98d68ecb3c8c43d0d5b0e16eda92974[m
+Author: mazzeob <bmazzeo@byu.edu>
+Date:   Fri Jan 13 16:35:58 2023 -0700
+
+    Create Lab2_Skeleton_Code.ino
+    
+    Added skeleton code for revised Lab 2.
+
+[33mcommit 12664652c62b4425e0e0f33409a691876d716e85[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:50:20 2022 -0700
+
+    renamed lab2_state_machine as lab2_milestone3
+
+[33mcommit 72a80777c53b241d2717bba288eeb69287bca662[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:44:16 2022 -0700
+
+    Update .gitignore
+
+[33mcommit da3c8e40fcef53bfc1c4daefacfdcd023998bea3[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:43:40 2022 -0700
+
+    Delete python/.idea directory
+
+[33mcommit 07505c5f308ff135714158ec7fb2efe896205b24[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:43:09 2022 -0700
+
+    Delete Icon
+
+[33mcommit 3f68c8d6131f5cf662b1cc41f87b15b8db3c82aa[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:42:31 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 9bfdbf8f4aa26c0e6a8bdf8ab585a8839e43b0af[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:42:05 2022 -0700
+
+    Delete Icon
+
+[33mcommit b20dad526f0830757b40fdd39987f312aebd7edf[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:41:52 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit dfd46b9b2c2e386a5839d202949882dceca4e2fa[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:41:45 2022 -0700
+
+    Delete Icon
+
+[33mcommit f388c58e64229ee45dc0fc272367d3f70d7209b1[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:41:34 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 77a2754f69e85c511b1e6b3cd109cba4b53a8b97[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:41:01 2022 -0700
+
+    Delete Icon
+
+[33mcommit ea5e4e9da881297e00df5117406cb5051dfa958b[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:40:47 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 992aeca5a618fde05bf129634deddcfa3608a95d[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:40:28 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit ae998bc4f998fb6e452eda7125adb6827575bcd0[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:40:13 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 1098cb41f815031a9d4da042c6186ede32b34e93[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:40:04 2022 -0700
+
+    Delete Icon
+
+[33mcommit 4951100167b4bd1f17a401c340eba6ed5e94d702[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:39:51 2022 -0700
+
+    Delete Icon
+
+[33mcommit debecb97c979a58b27b81e43536ff42ae57691a0[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:39:39 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 537122c7cd5fbe7a7355cf2cc870410f13ba45d7[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:39:32 2022 -0700
+
+    Delete Icon
+
+[33mcommit 0aff44735fffa0bb7bf2fdf65444557f5f4290d4[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:39:23 2022 -0700
+
+    Delete Icon
+
+[33mcommit 40d7883dd8adba49e6618e53efc7b7bdee7c674e[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:39:11 2022 -0700
+
+    Delete Icon
+
+[33mcommit f98f9f0a110aa689dd65f85df3d4f0c71b9d852a[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:38:59 2022 -0700
+
+    Delete Icon
+
+[33mcommit 539c22840500897d06a1a846260cf52589ea5eb1[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:38:48 2022 -0700
+
+    Delete Icon
+
+[33mcommit cd89a2b18adac7823f67e53c3e35853a93a42ba8[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:38:37 2022 -0700
+
+    Delete Icon
+
+[33mcommit 6fd7290a143fbf7e3b4b7415ada8f414f8be9f5c[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:38:09 2022 -0700
+
+    Delete Icon
+
+[33mcommit 2d41bcad76d1a69a6e84b20aed9f89e2f25b3018[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:37:54 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit 513faaa1f9cd89b74dc7ce974af67dcc8eb73b29[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Dec 14 08:37:41 2022 -0700
+
+    Delete Icon
+
+[33mcommit 0cba5f9e657a109ed6a4c28a81cbc9c946e2efa3[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Dec 13 21:02:05 2022 -0700
+
+    Delete .DS_Store
+
+[33mcommit f229544e2601188c47af3d5de7cb411747b80456[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Dec 13 21:01:44 2022 -0700
+
+    Delete Icon
+
+[33mcommit c150ea9630a83bea0d7eea03f759cb79280e7903[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Dec 13 16:01:28 2022 -0700
+
+    Update lab2_state_machine.ino
+    
+    Changed isLight() function
+
+[33mcommit aa7e8822cfa6011f46176863a6dfc188e9214e83[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Dec 13 15:45:41 2022 -0700
+
+    Update lab2_milestone2.ino
+    
+    Removed LED_STRAIGHT (in a comment)
+
+[33mcommit a24f1c86b2441e05cbe82a56d9f9d4ab28d1f7d0[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Nov 8 11:29:12 2022 -0700
+
+    Update lab2_milestone2.ino
+    
+    changed isLightRight(), etc., to be just isLight(int pin)
+
+[33mcommit 3e5447deaa2637a7ea1ac389732d019d33dcbbed[m
+Merge: d8b3f04 e6b92e7
+Author: beard <beard@byu.edu>
+Date:   Wed Nov 2 16:42:04 2022 -0600
+
+    Merge branch 'main' of https://github.com/ECEn301Instructor/ECEn301
+
+[33mcommit d8b3f040d7c527b8fe6bcc21cdb02d961d7b9371[m
+Author: beard <beard@byu.edu>
+Date:   Wed Nov 2 16:40:00 2022 -0600
+
+    added photodiode holder files
+
+[33mcommit e6b92e74f28d14d7dc517f3675df42d600a3bc67[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Mon Oct 10 16:46:05 2022 -0600
+
+    Update README.md
+
+[33mcommit 100d258e5b4471307c44c0558317ea6bbd6279d2[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Oct 4 13:51:25 2022 -0600
+
+    Update README.md
+
+[33mcommit c94193b8dc0c700679d70687d77b7ffdcd4cdcbf[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Oct 4 13:50:42 2022 -0600
+
+    Update README.md
+
+[33mcommit 74c464532c158700f18ea0e073380fd51524bd73[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 27 16:44:59 2022 -0600
+
+    Update lab2_milestone1.ino
+
+[33mcommit 30f678b0e0cb82cee84ec20dac7f85a55787eead[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 27 16:43:07 2022 -0600
+
+    Update lab2_milestone2.ino
+
+[33mcommit 4f9d10ffbe0cacac81fd97ff1cc4c3b0aafe9adb[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 27 16:39:41 2022 -0600
+
+    Update lab2_state_machine.ino
+
+[33mcommit ebaca69ae5ce7f6a7a350c5e47c832a59add5865[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 27 14:13:10 2022 -0600
+
+    Update lab2_state_machine.ino
+
+[33mcommit baa84ffef234171b6d4c2556af29e41fbd027194[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Mon Sep 26 12:51:29 2022 -0600
+
+    Update lab2_milestone2.ino
+
+[33mcommit 37affed44f8975b4e902f15524145edcd740e3c5[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Thu Sep 15 13:46:04 2022 -0600
+
+    Update lab2_milestone1.ino
+
+[33mcommit 4e7815b6863298dc3257ea4eab8702bc886e3c2e[m
+Author: beard <beard@byu.edu>
+Date:   Wed Sep 14 13:11:14 2022 -0600
+
+    added code for milestones in lab2
+
+[33mcommit 0e9614953a224a16ddb3e70cba20f571a99d8d8a[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Wed Sep 14 12:49:55 2022 -0600
+
+    Update lab2_state_machine.ino
+
+[33mcommit f7163f28e15dd95fe851671e599b8bb2dae5fdce[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 13 17:51:31 2022 -0600
+
+    Update lab2_state_machine.ino
+
+[33mcommit 20239fb6d1dc6a14c115f13760e39306c0add142[m
+Author: Randy Beard <beard@byu.edu>
+Date:   Tue Sep 13 11:48:11 2022 -0600
+
+    Update lab2_push_button.ino
+
+[33mcommit 59a760283e97bbdc74cf5dd3c5758aec83663156[m
+Author: beard <beard@byu.edu>
+Date:   Wed Dec 22 14:53:35 2021 -0700
+
+    added lecture2 templates and other code
+
+[33mcommit 2959fa5490854d7edc7c85105ec3d449e1ddfedd[m
+Author: ECEn301Instructor <96546743+ECEn301Instructor@users.noreply.github.com>
+Date:   Wed Dec 22 12:47:23 2021 -0700
+
+    Update README.md
+
+[33mcommit 838fb2b2c84d3d35f0747673a2da6aadd444d3ba[m
+Author: ECEn301Instructor <96546743+ECEn301Instructor@users.noreply.github.com>
+Date:   Wed Dec 22 12:21:46 2021 -0700
+
+    Initial commit
