@@ -14,7 +14,7 @@ void setup() // setup function
 void loop() // main loop
 {
   float tau = fsmComputeTau();  // FSM to compute tau
-  //Serial.println(tau);  // plot tau vs. time
+  Serial.println(tau);  // plot tau vs. time
   
   //float vin = pinVoltage(FILTER_IN_PIN); 
   //Serial.println(vin);  // plot vin vs. time

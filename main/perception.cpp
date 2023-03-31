@@ -13,13 +13,13 @@ void RobotPerception() {
   //Serial.println(getPinVoltage(BUTTON_2)); //uncomment for debugging
 
 
-  if (isButtonPushed(BUTTON_2)) {
+  if (isPhotodiodeLit(PHOTO_LEFT)) {
     SensedLightLeft = DETECTION_YES;
   } else {
     SensedLightLeft = DETECTION_NO;
   }
   // Remember, you can find the buttons and which one goes to what towards the top of the file
-  if (isButtonPushed(BUTTON_4)) {
+  if (isPhotodiodeLit(PHOTO_RIGHT)) {
     SensedLightRight = DETECTION_YES;
   } else {
     SensedLightRight = DETECTION_NO;
@@ -28,13 +28,13 @@ void RobotPerception() {
 
 
   /* Code to detect if light is up or down. Lab 2 milestone 3*/
-  if (isButtonPushed(BUTTON_1)) {
+  if (isPhotodiodeLit(PHOTO_UP)) {
     SensedLightUp = DETECTION_YES;
   } else {
     SensedLightUp = DETECTION_NO;
   }
 
-  if (isButtonPushed(BUTTON_5)) {
+  if (isPhotodiodeLit(PHOTO_DOWN)) {
     SensedLightDown = DETECTION_YES;
   } else {
     SensedLightDown = DETECTION_NO;
@@ -107,4 +107,13 @@ bool isCapacitiveSensorTouched() {
   } else {
     CapacitorTouched = 1;
   }
+}
+
+bool isPhotodiodeLit(int pin) {
+    if(getPinVoltage(pin) > PHOTODIODE_LIMIT){
+      return true;
+    }
+    else{
+      return false;
+    }
 }

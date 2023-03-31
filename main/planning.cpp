@@ -69,6 +69,8 @@ int getSteerRobotState() {
   else {
     return 3; //go straight
   }
+  Serial.print("error in getSteerRobotState in planning.cpp");
+  return 0;
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -79,36 +81,27 @@ int getSteerRobotState() {
 void fsmSteerRobot() {
   static int steerRobotState = 0;
   //  Serial.println(steerRobotState); //uncomment for debugging
-
+steerRobotState = getSteerRobotState();
   switch (steerRobotState) {
     case 0: //light is not detected
       //The light is straight ahead, drive straight
       ActionRobotDrive = DRIVE_STOP;
-      steerRobotState = getSteerRobotState();
       break;
 
     case 1: //light is to the left of robot
       //The light is on the left, turn left
       ActionRobotDrive =  DRIVE_LEFT;
-      steerRobotState = getSteerRobotState();
       break;
 
     case 2: //light is to the right of robot
       //The light is on the right, turn right
       ActionRobotDrive =  DRIVE_RIGHT;
-      steerRobotState = getSteerRobotState();
       break;
 
     case 3:
       ActionRobotDrive = DRIVE_STRAIGHT;
-      steerRobotState = getSteerRobotState();
       //control the LEDs
       break;
-
-    default: // error handling
-      {
-        steerRobotState = 0;
-      }
   }
 }
 
@@ -193,7 +186,7 @@ void fsmVoltageDetection(){
 ////////////////////////////////////////////////////////////////////
 void fsmCapacitiveSensorSpeedControl() {
     static int CapacitorState = 0;
-    Serial.print(CapacitorState);
+//    Serial.print(CapacitorState);
   switch(CapacitorState ){
     case 0:
         if(CapacitorTouched){

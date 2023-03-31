@@ -11,4 +11,6 @@ bool isButtonPushed(int button_pin);
 bool isCollision();
 
 bool isCapacitiveSensorTouched();
+
+bool isPhotodiodeLit(int pin);
 #endif

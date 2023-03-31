@@ -14,11 +14,11 @@
 // Replace the pin numbers with those you connect to your robot
 
 // Button pins. These will be replaced with the photodiode variables in lab 5
-#define BUTTON_1 A2 // Far left Button - Servo Up
-#define BUTTON_2 A3 // Left middle button - Left Motor
-#define BUTTON_3 A4 // Middle Button - Collision
-#define BUTTON_4 A5 // Right middle button - Right Motor
-#define BUTTON_5 A6 // Far right button - Servo Down
+// #define BUTTON_1 A2 // Far left Button - Servo Up
+// #define BUTTON_2 A3 // Left middle button - Left Motor
+#define BUTTON_3 A6 // Middle Button - Collision
+// #define BUTTON_4 A5 // Right middle button - Right Motor
+// #define BUTTON_5 A6 // Far right button - Servo Down
 
 // LED pins
 #define LED_1 2 // Far Left LED - Servo Up
@@ -38,6 +38,11 @@
 
 // Photodiode pins - Lab 5
 // These will replace buttons 1, 2, 4, 5
+#define PHOTODIODE_LIMIT 2.1
+#define PHOTO_UP A2
+#define PHOTO_DOWN A3
+#define PHOTO_LEFT A5
+#define PHOTO_RIGHT A4
 
 // Capacitive sensor pins - Lab 4
 

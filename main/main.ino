@@ -50,11 +50,11 @@ void setup() {
   pinMode(BATTERY_V, INPUT);
   
   //Set up input pins
-  pinMode(BUTTON_1, INPUT);
-  pinMode(BUTTON_2, INPUT);
+  pinMode(PHOTO_DOWN, INPUT);
+  pinMode(PHOTO_UP, INPUT);
   pinMode(BUTTON_3, INPUT);
-  pinMode(BUTTON_4, INPUT);
-  pinMode(BUTTON_5, INPUT);
+  pinMode(PHOTO_LEFT, INPUT);
+  pinMode(PHOTO_RIGHT, INPUT);
 
   //Set up servo - Lab 6
 
@@ -98,8 +98,16 @@ void loop() {
 //  Serial.println(ActionRobotDrive);
 
 //Debgging the capacitive sensor
-Serial.print("Touched: ");
-Serial.print(CapacitorTouched);
-Serial.print("\tMotor: ");
-Serial.println(MotorSpeed);
+//Serial.print("Speed: ");
+//Serial.print(MotorSpeed);
+//Serial.print("\tDrive?: ");
+//Serial.print(ActionRobotDrive);
+//Serial.print("\tLeft: ");
+//Serial.print(SensedLightLeft);
+//Serial.print("\tRight: ");
+//Serial.print(SensedLightRight);
+//Serial.print("\tUp: ");
+//Serial.print(SensedLightUp);
+//Serial.print("\tDown: ");
+//Serial.println(SensedLightDown);
 }
