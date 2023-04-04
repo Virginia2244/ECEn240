@@ -44,24 +44,24 @@ void RobotAction() {
 
   switch (BatteryState){
     case 0:
-        doTurnLedOff(LED_5);
-        doTurnLedOff(LED_4);
-        doTurnLedOff(LED_3);
+//        doTurnLedOff(LED_5);
+//        doTurnLedOff(LED_4);
+//        doTurnLedOff(LED_3);
     break;
     case 1:
-        doTurnLedOn(LED_5);
-        doTurnLedOff(LED_4);
-        doTurnLedOff(LED_3);
+//        doTurnLedOn(LED_5);
+//        doTurnLedOff(LED_4);
+//        doTurnLedOff(LED_3);
     break;
     case 2:
-        doTurnLedOn(LED_5);
-        doTurnLedOn(LED_4);
-        doTurnLedOff(LED_3);
+//        doTurnLedOn(LED_5);
+//        doTurnLedOn(LED_4);
+//        doTurnLedOff(LED_3);
     break;
     case 3:
-        doTurnLedOn(LED_5);
-        doTurnLedOn(LED_4);
-        doTurnLedOn(LED_3);
+//        doTurnLedOn(LED_5);
+//        doTurnLedOn(LED_4);
+//        doTurnLedOn(LED_3);
     break;
   }
 
@@ -79,20 +79,20 @@ void MoveServo() {
   /* Add CurrentServoAngle in lab 6 */
   switch (ActionServoMove) {
     case SERVO_MOVE_STOP:
-//      doTurnLedOff(LED_5);
-//      doTurnLedOff(LED_1);
+      doTurnLedOff(LED_5);
+      doTurnLedOff(LED_1);
       break;
     case SERVO_MOVE_UP:
-//      doTurnLedOff(LED_5);
-//      doTurnLedOn(LED_1);
+      doTurnLedOff(LED_5);
+      doTurnLedOn(LED_1);
       break;
     case SERVO_MOVE_DOWN:
-//      doTurnLedOn(LED_5);
-//      doTurnLedOff(LED_1);
+      doTurnLedOn(LED_5);
+      doTurnLedOff(LED_1);
       break;
   }
   //This makes an LED different levels of bright depending on how fast the motors are going to run.
-  analogWrite(LED_2, MotorSpeed);
+//  analogWrite(LED_2, MotorSpeed);
 }
 
 

@@ -16,16 +16,16 @@
 // Button pins. These will be replaced with the photodiode variables in lab 5
 // #define BUTTON_1 A2 // Far left Button - Servo Up
 // #define BUTTON_2 A3 // Left middle button - Left Motor
-#define BUTTON_3 A6 // Middle Button - Collision
+#define BUTTON_3 A7 // Middle Button - Collision
 // #define BUTTON_4 A5 // Right middle button - Right Motor
 // #define BUTTON_5 A6 // Far right button - Servo Down
 
 // LED pins
-#define LED_1 2 // Far Left LED - Servo Up
-#define LED_2 3 // Left Middle LED  - Left Motor
-#define LED_3 4 // Middle LED - Collision
-#define LED_4 5 // Right Middle LED - Right Motor
-#define LED_5 6 // Far Right LED - Servo Down
+#define LED_1 3 // Far Left LED - Servo Up
+//#define LED_2 3 // Left Middle LED  - Left Motor
+//#define LED_3 4 // Middle LED - Collision
+//#define LED_4 5 // Right Middle LED - Right Motor
+#define LED_5 2 // Far Right LED - Servo Down
 
 // Motor enable pins - Lab 3
 // These will replace LEDs 2 and 4
@@ -39,9 +39,9 @@
 // Photodiode pins - Lab 5
 // These will replace buttons 1, 2, 4, 5
 #define PHOTODIODE_LIMIT 2.1
-#define PHOTO_UP A2
+#define PHOTO_UP A5
 #define PHOTO_DOWN A3
-#define PHOTO_LEFT A5
+#define PHOTO_LEFT A2
 #define PHOTO_RIGHT A4
 
 // Capacitive sensor pins - Lab 4
@@ -57,7 +57,7 @@
 // Replace the parameters with those that are appropriate for your robot
 
 // Voltage at which a button is considered to be pressed
-#define BUTTON_THRESHOLD 2.5
+#define BUTTON_THRESHOLD 2.7
 
 // Voltage at which a photodiode voltage is considered to be present - Lab 5
 

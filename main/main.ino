@@ -37,9 +37,9 @@ void setup() {
   
   //Set up output pins
   pinMode(LED_1, OUTPUT);
-  pinMode(LED_2, OUTPUT);
-  pinMode(LED_3, OUTPUT);
-  pinMode(LED_4, OUTPUT);
+//  pinMode(LED_2, OUTPUT);
+//  pinMode(LED_3, OUTPUT);
+//  pinMode(LED_4, OUTPUT);
   pinMode(LED_5, OUTPUT);
 
   //Set up output pins for motors
@@ -98,16 +98,16 @@ void loop() {
 //  Serial.println(ActionRobotDrive);
 
 //Debgging the capacitive sensor
-//Serial.print("Speed: ");
-//Serial.print(MotorSpeed);
-//Serial.print("\tDrive?: ");
-//Serial.print(ActionRobotDrive);
-//Serial.print("\tLeft: ");
-//Serial.print(SensedLightLeft);
-//Serial.print("\tRight: ");
-//Serial.print(SensedLightRight);
-//Serial.print("\tUp: ");
-//Serial.print(SensedLightUp);
-//Serial.print("\tDown: ");
-//Serial.println(SensedLightDown);
+Serial.print("Speed: ");
+Serial.print(MotorSpeed);
+Serial.print("\tActionServoMove: ");
+Serial.print(ActionServoMove);
+Serial.print("\tLeft: ");
+Serial.print(SensedLightLeft);
+Serial.print("\tRight: ");
+Serial.print(SensedLightRight);
+Serial.print("\tUp: ");
+Serial.print(SensedLightUp);
+Serial.print("\tDown: ");
+Serial.println(SensedLightDown);
 }
